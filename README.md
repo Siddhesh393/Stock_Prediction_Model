@@ -48,7 +48,7 @@ The model is trained on historical stock price data, which includes features suc
 - **Close**: Stock price at market close
 - **Volume**: Number of shares traded
 
-The only feature used in the project is the closing price (**Close**).
+The only feature used in the project is the closing price ( **Close** ).
 
 ## How to Run
 
