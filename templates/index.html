@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Series Forecasting App</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #004aad;
+        }
+        form {
+            background-color: white;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #004aad;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0066ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>📈 Time Series Forecasting</h1>
+
+    <form action="/forecast" method="post">
+        <label for="model_type">Select Model:</label>
+        <select name="model_type" id="model_type" required>
+            <option value="ARIMA">ARIMA</option>
+            <option value="SARIMA">SARIMA</option>
+            <option value="TES_Additive">Holt-Winters Additive</option>
+            <option value="TES_Multiplicative">Holt-Winters Multiplicative</option>
+            <option value="LSTM">LSTM</option>
+        </select>
+
+        <label for="steps">Number of Days to Forecast:</label>
+        <input type="number" name="steps" id="steps" min="1" max="365" required>
+
+        <button type="submit">Generate Forecast</button>
+    </form>
+</body>
+</html>

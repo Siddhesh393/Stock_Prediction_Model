@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ model_type }} Forecast Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #004aad;
+        }
+        img {
+            margin-top: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            max-width: 90%;
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            background-color: #004aad;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0066ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ model_type }} Forecast for {{ steps }} Days</h1>
+    <img src="data:image/png;base64,{{ plot_base64 }}" alt="Forecast Plot">
+    <br>
+    <a href="/">🔙 Back to Home</a>
+</body>
+</html>
